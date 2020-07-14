@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import Header from './components/layout/Header';
+import Main from './components/layout/Main';
+import Footer from './components/layout/Footer';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+export const App = ({ darkModeDefault = false }) => {
+	const [darkMode, setDarkMode] = useState(darkModeDefault);
 
-export default App;
+	return (
+		<main className={darkMode ? 'darkmode' : undefined}>
+			<div darkMode={darkMode} setDarkMode={setDarkMode}>
+				<Header />
+				<Main />
+				<Footer />
+			</div>
+		</main>
+	);
+};
+
+App.propTypes = {
+	darkModeDefault: PropTypes.bool,
+};
