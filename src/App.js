@@ -1,23 +1,16 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import Header from './components/layout/Header';
 import Main from './components/layout/Main';
-import Footer from './components/layout/Footer';
 
-export const App = ({ darkModeDefault = false }) => {
-	const [darkMode, setDarkMode] = useState(darkModeDefault);
-
+const App = () => {
 	return (
-		<main className={darkMode ? 'darkmode' : undefined}>
-			<div darkMode={darkMode} setDarkMode={setDarkMode}>
+		<main>
+			<div>
 				<Header />
 				<Main />
-				<Footer />
 			</div>
 		</main>
 	);
 };
 
-App.propTypes = {
-	darkModeDefault: PropTypes.bool,
-};
+export default App;

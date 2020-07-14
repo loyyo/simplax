@@ -1,9 +1,9 @@
 import React from 'react';
-import Weather from './components/Weather/Weather';
-import Todos from './components/Todos/Todos';
-import Budget from './components/Budget/Budget';
+import Weather from '../Weather/Weather';
+import Todos from '../Todos/Todos';
+import Budget from '../Budget/Budget';
 
-export const Main = () => {
+const Main = () => {
 	return (
 		<section className='main'>
 			<Weather />
@@ -12,3 +12,5 @@ export const Main = () => {
 		</section>
 	);
 };
+
+export default Main;
