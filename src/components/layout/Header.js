@@ -29,7 +29,7 @@ export const Header = ({ loggedInDefault = false }) => {
 						alt='simplax_logo'
 					/>
 				</div>
-				<div class='collapse navbar-collapse' id='navbarSupportedContent'>
+				<div className='collapse navbar-collapse' id='navbarSupportedContent'>
 					<ul className='navbar-nav'>
 						{/* TODO: DARK MODE BUTTON */}
 						<li className='nav-item align-middle mt-3 mr-5'>
