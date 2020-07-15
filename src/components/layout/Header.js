@@ -4,16 +4,16 @@ export const Header = ({ loggedInDefault = false }) => {
 	const [loggedIn, setLoggedIn] = useState(loggedInDefault);
 
 	// TODO: LOGIN/SIGNUP/LOGOUT FUNCTIONS
-	const logInPopup = (loggedIn, setLoggedIn) => {
+	const logInPopup = () => {
 		setLoggedIn(!loggedIn);
 		console.log('LogIn!');
 	};
 
-	const signUpPopup = (loggedIn) => {
+	const signUpPopup = () => {
 		console.log('SignUp!');
 	};
 
-	const logOutPopup = (loggedIn, setLoggedIn) => {
+	const logOutPopup = () => {
 		setLoggedIn(!loggedIn);
 		console.log('LogOut!');
 	};
@@ -38,31 +38,19 @@ export const Header = ({ loggedInDefault = false }) => {
 						{/* TODO: ADD LOG IN & SIGN UP & LOG OUT */}
 						<div style={{ display: loggedIn ? 'none' : 'block' }}>
 							<li className='nav-item d-inline-block'>
-								<button
-									type='button'
-									onClick={() => logInPopup(loggedIn, setLoggedIn)}
-									onKeyDown={() => logInPopup(loggedIn, setLoggedIn)}
-								>
+								<button type='button' onClick={() => logInPopup()} onKeyDown={() => logInPopup()}>
 									Log In
 								</button>
 							</li>
 							<li className='nav-item d-inline-block mt-3'>
-								<button
-									type='button'
-									onClick={() => signUpPopup(loggedIn, setLoggedIn)}
-									onKeyDown={() => signUpPopup(loggedIn, setLoggedIn)}
-								>
+								<button type='button' onClick={() => signUpPopup()} onKeyDown={() => signUpPopup()}>
 									Sign Up
 								</button>
 							</li>
 						</div>
 						<div style={{ display: loggedIn ? 'block' : 'none' }}>
 							<li className='nav-item d-inline-block mt-3'>
-								<button
-									type='button'
-									onClick={() => logOutPopup(loggedIn, setLoggedIn)}
-									onKeyDown={() => logOutPopup(loggedIn, setLoggedIn)}
-								>
+								<button type='button' onClick={() => logOutPopup()} onKeyDown={() => logOutPopup()}>
 									Log Out
 								</button>
 							</li>

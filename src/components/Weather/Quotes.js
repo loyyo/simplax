@@ -18,14 +18,14 @@ const Quotes = () => {
 
 	const randomQuote = () => {
 		const index = Math.floor(Math.random() * quotesList.length);
-		setText(quotesList[index].text);
-		setAuthor(quotesList[index].author);
+		setText(`"${quotesList[index].text}"`);
+		setAuthor(quotesList[index].author !== null ? `- ${quotesList[index].author}` : '- Unknown');
 	};
 
 	return (
 		<div className='quote-machine'>
 			<div className='text-quote'>{text}</div>
-			<div className='author-quote'>{author != null ? author : 'Unknown'}</div>
+			<div className='author-quote'>{author}</div>
 			<button onClick={randomQuote}>Get Quote</button>
 		</div>
 	);

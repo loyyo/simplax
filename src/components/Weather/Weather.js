@@ -26,6 +26,7 @@ const Weather = () => {
 	let today = new Date().toDateString();
 	return (
 		<div className='weather'>
+			<div>Type your city here:</div>
 			<div className='search-box-weather'>
 				<input
 					type='text'
