@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Budget = () => {
+const Footer = () => {
 	return <div></div>;
 };
 
-export default Budget;
+export default Footer;

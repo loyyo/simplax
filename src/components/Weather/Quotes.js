@@ -8,7 +8,10 @@ const Quotes = () => {
 	const [quotesList, setQuotesList] = useState({});
 
 	const getQuotesList = () => {
-		fetch(api)
+		fetch(api, {
+			method: 'GET',
+			mode: 'cors',
+		})
 			.then((res) => res.json())
 			.then((result) => {
 				setQuotesList(result);
