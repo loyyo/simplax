@@ -1,12 +1,20 @@
 import React from 'react';
 import Weather from '../Weather/Weather';
-import Todos from '../Todos/Todos';
+import BodyFat from '../Calculators/BodyFat';
+// import Todos from '../Todos/Todos';
+// import Budget from '../Calculators/Budget';
+// import Calorie from '../Calculators/Calorie';
+// import Interest from '../Calculators/Interest';
 
 const Main = () => {
 	return (
 		<section className='main'>
 			<Weather />
-			<Todos />
+			<BodyFat />
+			{/* <Budget /> */}
+			{/* <Calorie /> */}
+			{/* <Interest /> */}
+			{/* <Todos /> */}
 		</section>
 	);
 };

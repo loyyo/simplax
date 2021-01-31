@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import Time from './Time';
 import Quotes from './Quotes';
-require('dotenv').config();
 
 const api = {
-	key: 'fe3750b5590c8dfd5a70519caf34f62e',
-	base: 'https://api.openweathermap.org/data/2.5/',
+	weather: process.env.REACT_APP_WEATHER_API,
+	city: process.env.REACT_APP_CITY_API,
 };
 
 const Weather = () => {
@@ -15,7 +14,9 @@ const Weather = () => {
 
 	const search = (evt) => {
 		if (evt.key === 'Enter') {
-			fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
+			fetch(
+				`https://api.openweathermap.org/data/2.5/weather?q=${query}&units=metric&APPID=${api.weather}`
+			)
 				.then((res) => res.json())
 				.then((result) => {
 					setWeather(result);
@@ -32,7 +33,9 @@ const Weather = () => {
 		};
 
 		const citySearch = (town) => {
-			fetch(`${api.base}weather?q=${town}&units=metric&APPID=${api.key}`)
+			fetch(
+				`https://api.openweathermap.org/data/2.5/weather?q=${town}&units=metric&APPID=${api.weather}`
+			)
 				.then((res) => res.json())
 				.then((result) => {
 					setWeather(result);
@@ -45,7 +48,7 @@ const Weather = () => {
 			var lng = coordinates[1];
 
 			fetch(
-				`https://us1.locationiq.com/v1/reverse.php?key=pk.fe334be05e9db7a54ea71a83e7b77109&lat=${lat}&lon=${lng}&format=json`
+				`https://us1.locationiq.com/v1/reverse.php?key=${api.city}&lat=${lat}&lon=${lng}&format=json`
 			)
 				.then((res) => res.json())
 				.then((result) => {

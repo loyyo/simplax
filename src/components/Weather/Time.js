@@ -7,12 +7,12 @@ const Time = () => {
 	let minutes = time.getMinutes() * 60;
 	let seconds = time.getSeconds();
 	let currentTimeInSeconds = hours + minutes + seconds;
-	const oneDay = 86400;
+	const halfDay = 43200;
 
 	useEffect(() => {
 		const outline = document.querySelector('.moving-outline circle');
 		const outlineLength = outline.getTotalLength();
-		let progress = outlineLength - (currentTimeInSeconds / oneDay) * outlineLength;
+		let progress = outlineLength - (currentTimeInSeconds / halfDay) * outlineLength;
 		outline.style.strokeDashoffset = progress;
 		outline.style.strokeDasharray = outlineLength;
 	}, [currentTimeInSeconds]);
